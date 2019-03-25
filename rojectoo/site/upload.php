@@ -26,9 +26,9 @@ if(isset($_FILES['image'])){
   if($file_size > 2097152){
     $errors[] ='Het bestand moet kleiner zijn dan 2 MB';
   }
-
   if(empty($errors)==true){
      // move_upload_file stuurt je bestand naar een andere lokatie
+
      move_uploaded_file($file_tmp,"uploads/".$file_name);
      echo "Gelukt";
   } else{
@@ -45,7 +45,7 @@ if(isset($_FILES['image'])){
   <head>
     <link rel="stylesheet" type="text/css" href="css.css">
     <meta charset="utf-8">
-    <title><div id=upload status></div> geupload</title>
+    <title> geupload</title>
   </head>
   <body>
     <nav></nav>
