@@ -8,10 +8,26 @@
   <body>
     <div class="venster">
       <input type="button" class="button" id="inloggen" value="Log in">
+      <form action="#">
+        <label for="gebruikersnaam">gebruikersnaam</label>
+        <input type="text" name="gebruikersnaam" id="gebruikersnaam" placeholder="gebruikersnaam" required> <br>
+        <label for="wachtwoord">wachtwoord</label>
+        <input type="password" name="wachtwoord" id="wachtwoord" placeholder="1234456" required> <br>
+        <input type="submit" value="log in">
+      </form>
     </div>
     <div class="venster">
       <input type="button" class="button" id="registeer" value="Registeren">
+      <form action="index.html">
+        <label for="gebruikersnaam">gebruikersnaam</label>
+        <input type="text" name="gebruikersnaam" id="gebruikersnaam2" placeholder="gebruikersnaam" required> <br>
+        <label for="wachtwoord">wachtwoord</label>
+        <input type="password" name="wachtwoord2" id="wachtwoord2" placeholder="wachtwoord" required> <br>
+        <label for="wachtwoord2">herhaal wachtwoord</label>
+        <input type="password" name="wachtwoord3" id="wachtwoord3" placeholder="nogmaals wachtwoord" required> <br>
+        <input type="submit" value="registeer">
+      </form>
     </div>
-    <script src="javascript/java.js"></script>
+    <script src="javascript/test.js"></script>
   </body>
 </html>
