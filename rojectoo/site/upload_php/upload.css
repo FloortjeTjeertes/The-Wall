@@ -49,6 +49,6 @@ body{
 #midle{background-color: lime;}
 #midle{margin-top: 20%;}
 /* =======================================================uploadbox========================================================== */
-#uploadbox{background-color: white;
+#uploadbox{background-color: lightgreen;
 z-index: 1;
 }
