@@ -69,8 +69,8 @@ if(isset($_FILES['image'])){
         </div>
 
     <h3>foto uploaden</h3>
-    <div id="wrapper">
-<div id="upload box">
+    <div id="midle">
+<div id="uploadbox">
 beste <div id=naam>uw naam</div> upload hier je foto
 <form action="" method="POST" enctype="multipart/form-data">
 <input type="file" name="image">

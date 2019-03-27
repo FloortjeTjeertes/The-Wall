@@ -41,3 +41,14 @@ body{
 #topnav li:hover ul, #topnav li li:hover ul{left:auto;}
 #topnav li:hover{position:static;}
 #topnav li.last a{margin-right:0;}
+
+
+
+
+/* =======================================================midle========================================================== */
+#midle{background-color: lime;}
+#midle{margin-top: 20%;}
+/* =======================================================uploadbox========================================================== */
+#uploadbox{background-color: lightgreen;
+z-index: 1;
+}
