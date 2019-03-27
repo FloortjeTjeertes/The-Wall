@@ -46,7 +46,28 @@ if(isset($_FILES['image'])){
     <title> geupload</title>
   </head>
   <body>
-    <nav></nav>
+
+        <div class="wrapper">
+          <div id="header">
+            <div id="logo">
+              <img src="">
+          </div>
+
+          <div id="topnav">
+            <ul>
+              <li>
+                <input type="button" class="button" id="logIn" value="Log in">
+              </li>
+              <li>
+                <input type="button" class="button" id="signIn" value="Sign in">
+              </li>
+              <li>
+                <input type="button" class="button" id="profiel" value="Profiel">
+              </li>
+            </ul>
+          </div>
+        </div>
+
     <h3>foto uploaden</h3>
     <div id="wrapper">
 <div id="upload box">
