@@ -1,6 +1,4 @@
 
-
-
 <?php
 if(isset($_FILES['image'])){
   $errors = array();
@@ -26,9 +24,9 @@ if(isset($_FILES['image'])){
   if($file_size > 2097152){
     $errors[] ='Het bestand moet kleiner zijn dan 2 MB';
   }
-
   if(empty($errors)==true){
      // move_upload_file stuurt je bestand naar een andere lokatie
+
      move_uploaded_file($file_tmp,"uploads/".$file_name);
      echo "Gelukt";
   } else{
@@ -43,12 +41,33 @@ if(isset($_FILES['image'])){
 <!DOCTYPE html>
 <html lang="nl" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" type="text/css" href="upload.css">
     <meta charset="utf-8">
-    <title><div id=upload status></div> geupload</title>
+    <title> geupload</title>
   </head>
   <body>
-    <nav></nav>
+
+        <div class="wrapper">
+          <div id="header">
+            <div id="logo">
+              <img src="">
+          </div>
+
+          <div id="topnav">
+            <ul>
+              <li>
+                <input type="button" class="button" id="logIn" value="Log in">
+              </li>
+              <li>
+                <input type="button" class="button" id="signIn" value="Sign in">
+              </li>
+              <li>
+                <input type="button" class="button" id="profiel" value="Profiel">
+              </li>
+            </ul>
+          </div>
+        </div>
+
     <h3>foto uploaden</h3>
     <div id="wrapper">
 <div id="upload box">
