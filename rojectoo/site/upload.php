@@ -41,7 +41,7 @@ if(isset($_FILES['image'])){
 <!DOCTYPE html>
 <html lang="nl" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" type="text/css" href="upload.css">
     <meta charset="utf-8">
     <title> geupload</title>
   </head>
