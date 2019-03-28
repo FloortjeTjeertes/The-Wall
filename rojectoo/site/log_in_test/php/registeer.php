@@ -3,6 +3,7 @@ include "databse/data.php";
   $gebruikersnaam = $_POST['gebruikersnaam2'];
   $wachtwoord = $_POST['wachtwoord2'];
   $herhaaldWachtwoord = $_POST['wachtwoord3'];
+  $email = $_POST['email'];
 
   $con = mysqli_connect($servername,$uid,$pwd,$database);
   if (!$con) {
@@ -16,8 +17,8 @@ include "databse/data.php";
   }
 
   function makeAccount($gebruikersnaam,$wachtwoord,$con){
-    $sql = "INSERT INTO account (id, gebruikersnaam, wachtwoord)
-    VALUES ('', '$gebruikersnaam', '$wachtwoord')";
+    $sql = "INSERT INTO account (id, gebruikersnaam, wachtwoord, email)
+    VALUES ('', '$gebruikersnaam', '$wachtwoord', '$email')";
 
     if ($con->query($sql) === TRUE) {
         echo "New record created successfully";
