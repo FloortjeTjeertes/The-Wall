@@ -1,54 +1,159 @@
-
 /* ==================================================Header================================================== */
-.wrapper{
+
+html{
+
+}
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+     grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+}
+
+.wrapper {
   background-color: #8F8F8F;
   height: 130px;
   padding: 0;
   margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 6;
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
+  /* grid-template-columns: auto auto auto auto auto auto; */
 }
+
 .button {
   background-color: #FFFFFF;
-   border: none;
-   color: #000000;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   margin: 4px 2px;
-   cursor: pointer;
-   border-radius: 8px;
+  border: none;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 /* ==================================================Navigatie bar================================================== */
-#topnav{display:block; float:right; width:650px; margin:17px 0 0 0; padding:0; font-size:13px; font-weight:bold; font-family:Verdana, Arial, Helvetica, sans-serif;}
-#topnav ul{margin:0; padding:0; list-style:none;}
-#topnav ul, #topnav li{float:right; list-style:none; margin:0; padding:0;}
-#topnav li a:link, #topnav li a:visited, #topnav li a:hover{display:block; margin:0 10px 0 0; padding:5px 5px; color:#3f3b32;}
-#topnav ul ul li a:link, #topnav ul ul li a:visited{border:none;}
-#topnav ul li.last a{margin-right:0;}
-#topnav li a:hover, #topnav ul li.active a{color:#3f3b32;}
-#topnav li li a:link, #topnav li li a:visited{width:150px; float:none; margin:0; padding:7px 10px; font-size:12px; font-weight:normal; color:#FFFFFF; background-color:#3f3b32; border-left:1px solid #FFFFFF;}
-#topnav li li a:hover{color:#3f3b32; background-color:#ffffff;}
-#topnav li ul{z-index:9999; position:absolute; left:-999em; height:auto; width:170px;}
-#topnav li ul a{width:140px;}
-#topnav li ul ul{margin:-32px 0 0 0;}
-#topnav li:hover ul ul{left:-999em;}
-#topnav li:hover ul, #topnav li li:hover ul{left:auto;}
-#topnav li:hover{position:static;}
-#topnav li.last a{margin-right:0;}
+#topnav {
 
+  display: block;
+  float: right;
+  width: 650px;
+  margin: 17px 0 0 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
 
+#topnav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
+#topnav ul, #topnav li {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#topnav li a:link, #topnav li a:visited, #topnav li a:hover {
+  display: block;
+  margin: 0 10px 0 0;
+  padding: 5px 5px;
+  color: #3f3b32;
+}
+
+#topnav ul ul li a:link, #topnav ul ul li a:visited {
+  border: none;
+}
+
+#topnav ul li.last a {
+  margin-right: 0;
+}
+
+#topnav li a:hover, #topnav ul li.active a {
+  color: #3f3b32;
+}
+
+#topnav li li a:link, #topnav li li a:visited {
+  width: 150px;
+  float: none;
+  margin: 0;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #FFFFFF;
+  background-color: #3f3b32;
+  border-left: 1px solid #FFFFFF;
+}
+
+#topnav li li a:hover {
+  color: #3f3b32;
+  background-color: #ffffff;
+}
+
+#topnav li ul {
+  z-index: 9999;
+  position: absolute;
+  left: -999em;
+  height: auto;
+  width: 170px;
+}
+
+#topnav li ul a {
+  width: 140px;
+}
+
+#topnav li ul ul {
+  margin: -32px 0 0 0;
+}
+
+#topnav li:hover ul ul {
+  left: -999em;
+}
+
+#topnav li:hover ul, #topnav li li:hover ul {
+  left: auto;
+}
+
+#topnav li:hover {
+  position: static;
+}
+
+#topnav li.last a {
+  margin-right: 0;
+}
 
 /* =======================================================midle========================================================== */
-#midle{background-color: #43915a;}
-#midle{margin-top: 20%;}
+.midle {
+
+  grid-area: 3/2/8/9;
+
+
+  background-color: #43915a;
+  /* margin-top: 20%; */
+  border-radius: 25px;
+  height: 40px;
+  width: 40%;
+  /* position: absolute; */
+
+
+}
+
 /* =======================================================uploadbox========================================================== */
-#uploadbox{background-color: lightgreen;
-z-index: 1;
+#uploadbox {
+  background-color: lightgreen;
+  box-shadow: 10px 10px;
+  z-index: 1;
+  /* height: 10%;
+  width: 10%; */
+
 }

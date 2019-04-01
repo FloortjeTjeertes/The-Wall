@@ -33,7 +33,12 @@ if(isset($_FILES['image'])){
      print_r($errors);
   }
 
+  bestanden_upload($file_name);
 
+}
+function bestanden_upload($file_name){
+  $sql="INSERT INTO fotos(Datum,user,filepath,description,titel)
+  values('$file_name', '','','','')"
 }
 
  ?>
@@ -47,6 +52,8 @@ if(isset($_FILES['image'])){
   </head>
   <body>
 
+
+    </div>
         <div class="wrapper">
           <div id="header">
             <div id="logo">
@@ -67,20 +74,27 @@ if(isset($_FILES['image'])){
             </ul>
           </div>
         </div>
+</div>zs
 
+
+<div class="container">
     <h3>foto uploaden</h3>
-    <div id="midle">
-<div id="uploadbox">
-beste <div id=naam>uw naam</div> upload hier je foto
-<form action="" method="POST" enctype="multipart/form-data">
-<input type="file" name="image">
-<!-- <select class="select" name="categorie">
-</select> -->
-<input type="submit"/>
-</form>
-</div>
-<!-- //einde upload -->
+
+      <div id="midle" class="midle">
+    <div id="uploadbox">
+    beste <div id=naam>uw naam</div> upload hier je foto
+    <form action="" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <!-- <select class="select" name="categorie">
+    </select> -->
+    <input type="submit"/>
+    </form>
+    </div>
+    <!-- //einde upload -->
+        </div>
+
       </div>
       <!-- //einde wrapper -->
+    </div>
   </body>
 </html>
