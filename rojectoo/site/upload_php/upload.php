@@ -54,10 +54,10 @@ function bestanden_upload($con,$file_name){
   values('', '','uploads/$file_name','','')";
 $file_name="";
 if ($con->query($sql)=== TRUE){
-  echo "de afbeelding is succesvol";
+  echo "<script>alert(' verbinding');</script>";
 }
 else{
-  echo "Error".$sql."<br>".$con->error;
+  echo "<script>alert('Error".$sql."<br>".$con->error.";</script>";
 }
 }
 
