@@ -1,5 +1,17 @@
 
 <?php
+$servername ="localhost";
+$uid="root";
+$pwd="";
+$database="fotos";
+$con = mysqli_connect($servername,$uid,$pwd,$database);
+
+if(!$con){
+  die('kan niet verbinden: '.mysqli_error($con));
+}
+
+
+//foto upload
 if(isset($_FILES['image'])){
   $errors = array();
   $file_name = $_FILES['image']['name'];
@@ -18,7 +30,7 @@ if(isset($_FILES['image'])){
   $bestandstypen = array("jpeg","jpg","png");
 
   if(in_array($file_ext,$bestandstypen)=== false){
-  $errors[] = "Dit bestandstype kan niet, kies een JPEG of een PNG bestand.";
+  $errors[] = "<script>alert('Dit bestandstype kan niet, kies een JPEG of een PNG bestand.');</script>";
   }
 
   if($file_size > 2097152){
@@ -28,17 +40,25 @@ if(isset($_FILES['image'])){
      // move_upload_file stuurt je bestand naar een andere lokatie
 
      move_uploaded_file($file_tmp,"uploads/".$file_name);
-     echo "Gelukt";
+     echo "<script>alert('Gelukt');</script>";
   } else{
      print_r($errors);
   }
-
-  bestanden_upload($file_name);
+//function word aangeroepen
+  bestanden_upload($con,$file_name);
 
 }
-function bestanden_upload($file_name){
+//upload info
+function bestanden_upload($con,$file_name){
   $sql="INSERT INTO fotos(Datum,user,filepath,description,titel)
-  values('$file_name', '','','','')"
+  values('', '','uploads/$file_name','','')";
+$file_name="";
+if ($con->query($sql)=== TRUE){
+  echo "de afbeelding is succesvol";
+}
+else{
+  echo "Error".$sql."<br>".$con->error;
+}
 }
 
  ?>
@@ -74,7 +94,7 @@ function bestanden_upload($file_name){
             </ul>
           </div>
         </div>
-</div>zs
+</div>
 
 
 <div class="container">
