@@ -46,7 +46,6 @@ if(isset($_FILES['image'])){
   }
 //function word aangeroepen
   bestanden_upload($con,$file_name);
-
 }
 //upload info
 function bestanden_upload($con,$file_name){
