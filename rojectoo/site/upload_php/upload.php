@@ -1,5 +1,17 @@
 
 <?php
+$servername ="localhost";
+$uid="root";
+$pwd="";
+$database="fotos";
+$con = mysqli_connect($servername,$uid,$pwd,$database);
+
+if(!$con){
+  die('kan niet verbinden: '.mysqli_error($con));
+}
+
+
+//foto upload
 if(isset($_FILES['image'])){
   $errors = array();
   $file_name = $_FILES['image']['name'];
@@ -18,7 +30,7 @@ if(isset($_FILES['image'])){
   $bestandstypen = array("jpeg","jpg","png");
 
   if(in_array($file_ext,$bestandstypen)=== false){
-  $errors[] = "Dit bestandstype kan niet, kies een JPEG of een PNG bestand.";
+  $errors[] = "<script>alert('Dit bestandstype kan niet, kies een JPEG of een PNG bestand.');</script>";
   }
 
   if($file_size > 2097152){
@@ -28,12 +40,24 @@ if(isset($_FILES['image'])){
      // move_upload_file stuurt je bestand naar een andere lokatie
 
      move_uploaded_file($file_tmp,"uploads/".$file_name);
-     echo "Gelukt";
+     echo "<script>alert('Gelukt');</script>";
   } else{
      print_r($errors);
   }
-
-
+//function word aangeroepen
+  bestanden_upload($con,$file_name);
+}
+//upload info
+function bestanden_upload($con,$file_name){
+  $sql="INSERT INTO fotos(Datum,user,filepath,description,titel)
+  values('', '','uploads/$file_name','','')";
+$file_name="";
+if ($con->query($sql)=== TRUE){
+  echo "<script>alert(' verbinding');</script>";
+}
+else{
+  echo "<script>alert('Error".$sql."<br>".$con->error.";</script>";
+}
 }
 
  ?>
@@ -47,6 +71,8 @@ if(isset($_FILES['image'])){
   </head>
   <body>
 
+
+    </div>
         <div class="wrapper">
           <div id="header">
             <div id="logo">
@@ -67,20 +93,27 @@ if(isset($_FILES['image'])){
             </ul>
           </div>
         </div>
-
-    <h3>foto uploaden</h3>
-    <div id="midle">
-<div id="uploadbox">
-beste <div id=naam>uw naam</div> upload hier je foto
-<form action="" method="POST" enctype="multipart/form-data">
-<input type="file" name="image">
-<!-- <select class="select" name="categorie">
-</select> -->
-<input type="submit"/>
-</form>
 </div>
-<!-- //einde upload -->
+
+
+<div class="container">
+    <h3>foto uploaden</h3>
+
+      <div id="midle" class="midle">
+    <div id="uploadbox">
+    beste <div id=naam>uw naam</div> upload hier je foto
+    <form action="" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <!-- <select class="select" name="categorie">
+    </select> -->
+    <input type="submit"/>
+    </form>
+    </div>
+    <!-- //einde upload -->
+        </div>
+
       </div>
       <!-- //einde wrapper -->
+    </div>
   </body>
 </html>
