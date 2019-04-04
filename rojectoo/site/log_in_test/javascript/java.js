@@ -1,48 +1,23 @@
-const tekst = document.querySelectorAll('.tekst');
+let change = document.getElementById("change");
+let tekst1 = document.getElementById("tekst1");
+let tekst2 = document.getElementById("tekst2");
+let nummer = 0;
 
-for(let i=0; i<tekst.length; i++){
-  let teksten = tekst[i];
-  teksten.parentNode.removeChild(teksten);
-}
+change.addEventListener('click', verander);
 
-const knoppen = document.querySelectorAll('.button');
-const knoppenArrey = [];
-
-let achtergrond         = document.createElement("div");
-achtergrond.className   = "achtergrond";
-let modaalVenster       = document.createElement("div");
-modaalVenster.className = "modaalVenster";
-let kruisje             = document.createElement('button');
-kruisje.className       = "kruisje";
-kruisje.innerHTML       = '&#x00D7;';
-
-const inhoudToevoegen = (event) => {
-  const nummer = knoppenArrey.indexOf(event.target);
-  console.log(nummer);
-  modaalVenster.appendChild(kruisje);
-  modaalVenster.appendChild(tekst[nummer]);
-  achtergrond.appendChild(modaalVenster);
-  document.body.appendChild(achtergrond);
-}
-
-const sluiten = () => {
-  modaalVenster.innerHTML = "";
-  achtergrond.innerHTML = "";
-  document.body.removeChild(achtergrond);
-}
-
-kruisje.addEventListener('click', sluiten);
-achtergrond.addEventListener('click', sluiten);
-modaalVenster.addEventListener('click', stop);
-
-let inloggen = document.getElementById('inloggen');
-let registeer = document.getElementById('registeer');
-
-for (let i=0; i<2; i++) {
-  knoppenArrey.push(knoppen[i]);
-  knoppen[i].addEventListener('click', inhoudToevoegen);
-}
-
-function stop(event){
-  event.stopPropagation();
+function verander(){
+  switch (nummer) {
+    case 0:
+      nummer = 1;
+      change.value = "Log in";
+      tekst1.style.display = "none";
+      tekst2.style.display = "block";
+      break;
+    case 1:
+      nummer = 0;
+      change.value = "Log in";
+      tekst1.style.display = "block";
+      tekst2.style.display = "none";
+      break;
+  }
 }

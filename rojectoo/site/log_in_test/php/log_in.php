@@ -18,14 +18,16 @@
   $statement = $database->query($sql);
 
   $boolean = "false";
+  $nummer = 0;
 
   foreach ($statement as $rij) {
     if($gebruikersnaam === $rij['gebruikersnaam']){
-      if($wachtwoord === $rij['wachtwoord']){
+      if(password_verify($wachtwoord , $rij['wachtwoord'])){
         $boolean = "true";
+        $nummer = $rij["id"];
       }
     }
   }
 
-  header("Location: http://localhost/test/index.html?log_in=" . $boolean);
+  header("Location: http://localhost/test/index.php?log_in=" . $boolean . "&nummer=" . $nummer);
 ?>

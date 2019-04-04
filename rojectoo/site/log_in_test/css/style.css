@@ -1,12 +1,6 @@
 .venster {
   width: 150px;
-  height: 50px;
   padding: 10px;
-}
-
-.button {
-  width: 150px;
-  height: 50px;
 }
 
 .achtergrond {
@@ -22,27 +16,19 @@
 }
 
 .modaalVenster {
-  max-width: 80%;
+  width: 150px;
   padding: 2em;
   border-radius: 1em;
   background-color: #fff;
-  max-height: 80vh;
   overflow-y: auto;
   display: grid;
   grid-template-rows: auto 1fr;
   grid-row-gap: 1em;
-  animation: opkomen 1s ease-in-out forwards;
+}
+#tekst1 {
+  display: block;
 }
 
-.kruisje {
-  width: 2em;
-  justify-self: end;
-  font-size: 2em;
-  font-weight: 900;
-  transform: translateX(1em);
-  border: 0;
-  background-color: white;
-}
-.kruisje:hover {
-  color: red;
+#tekst2 {
+  display: none;
 }
