@@ -1,6 +1,5 @@
 <?php
   include "database/data.php";
-  include "database/database.php";
   $gebruikersnaam = $_POST['gebruikersnaam'];
   $wachtwoord = $_POST['wachtwoord'];
 

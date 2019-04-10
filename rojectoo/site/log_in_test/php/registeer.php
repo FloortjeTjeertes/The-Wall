@@ -1,6 +1,5 @@
 <?php
   include "database/data.php";
-  include "database/database.php";
   $gebruikersnaam = $_POST['gebruikersnaam2'];
   $wachtwoord = $_POST['wachtwoord2'];
   $herhaaldWachtwoord = $_POST['wachtwoord3'];
@@ -11,14 +10,7 @@
     die('Could not connect: ' . mysqli_error($con));
   }
 
-  $con->query($db);
-  $con->query($dt);
-
-  if(checkWachtwoord($wachtwoord, $herhaaldWachtwoord) == true){
-    makeAccount($gebruikersnaam,$wachtwoord,$con,$email);
-  }else{
-    header("Location: http://localhost/test/index.php?registeren=false");
-  }
+  makeAccount($gebruikersnaam,$wachtwoord,$con,$email);
 
   function makeAccount($gebruikersnaam,$wachtwoord,$con,$email){
     $wachtwoord2 = password_hash($wachtwoord, PASSWORD_DEFAULT);
@@ -31,13 +23,5 @@
         echo "Error: " . $sql . "<br>" . $con->error;
     }
     header("Location: http://localhost/test/index.php");
-  }
-
-  function checkWachtwoord($wachtwoord, $herhaaldWachtwoord){
-    if($wachtwoord === $herhaaldWachtwoord){
-      return true;
-    }else{
-      return false;
-    }
   }
 ?>
