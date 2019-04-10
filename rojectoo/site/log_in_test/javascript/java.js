@@ -10,10 +10,8 @@ let fout4 = document.getElementById("fout4");
 let submit2 = document.getElementById('submit2');
 let tekst1 = document.getElementById("tekst1");
 let tekst2 = document.getElementById("tekst2");
-let check1 = document.getElementById("check1");
 let check2 = document.getElementById("check2");
 let check3 = document.getElementById("check3");
-let check4 = document.getElementById("check4");
 let nummer = 0;
 
 fout2.style.color = "red";
@@ -49,6 +47,7 @@ function verander(){
 function gebruikersnaamCheck(){
   fout1.style.color = "red";
   ajaxGebruikersnaam(gebruikersnaam2.value);
+  let check1 = document.getElementById("check1");
 }
 
 function wachtwoordCheck(){
@@ -80,6 +79,7 @@ function wachtwoordHerhalenCheck(){
 
 function emailCheck(){
   ajaxEmail(email.value);
+  let check4 = document.getElementById("check4");
   fout4.style.color = "red";
 }
 
