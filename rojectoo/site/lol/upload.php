@@ -12,15 +12,16 @@ if(!$con){
 
 
 
-$Datum=date("Y-m-d");
-$titel = $_POST['titel'];
-$description = $_POST['description'];
+
 
 
 
 
 //foto upload
 if(isset($_FILES['image'])){
+  $titel = $_POST['titel'];
+  $description = $_POST['description'];
+$Datum=date("Y-m-d");
   $errors = array();
   $file_name = $_FILES['image']['name'];
   $file_size = $_FILES['image']['size'];
