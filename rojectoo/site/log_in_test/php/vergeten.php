@@ -10,10 +10,12 @@
 
     $email = $_POST['email'];
     $id = 0;
+    $email_mail = "";
 
     foreach ($statement as $rij) {
       if($email === $rij['email']){
         $id = $rij['id'];
+        $email_mail = $rij['email'];
       }
     }
 
@@ -28,7 +30,7 @@
       $msg = wordwrap($msg,70);
 
       // send email
-      mail($email,"My subject",$msg);
+      mail($email,"Wachtwoord aanpassen",$msg);
     }
   }
 ?>
