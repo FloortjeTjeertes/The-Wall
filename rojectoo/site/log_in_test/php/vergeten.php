@@ -9,7 +9,7 @@
     $statement = $con->query($sql);
 
     $email = $_POST['email'];
-    $id = 0;
+    $id = 0; 
     $email_mail = "";
 
     foreach ($statement as $rij) {
