@@ -29,7 +29,8 @@
             <input type="text" name="gebruikersnaam" placeholder="gebruikersnaam"> <br>
             <label for="wachtwoord">wachtwoord</label>
             <input type="password" name="wachtwoord" placeholder="1234456"> <br>
-            <input type="submit" value="log in" id="submit1">
+            <input type="submit" value="log in" id="submit1"><br>
+            <a href="http://localhost/test/vergeten.php" target="_blank">Wachtwoord vergeten?</a>
           </form>
         </div>
         <div id="tekst2">
