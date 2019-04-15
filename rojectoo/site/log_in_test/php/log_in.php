@@ -20,10 +20,11 @@
     if($gebruikersnaam === $rij['gebruikersnaam']){
       if(password_verify($wachtwoord , $rij['wachtwoord'])){
         if($rij['active'] === "true"){
-
+          $_SESSION = true;
+          $_SESSION['id'] = $rij['id'];
+          $_SESSION['vertificatie'] = $rij['vertificatie'];
         }
       }
     }
   }
-  header("Location: http://localhost/test/index.php");
 ?>

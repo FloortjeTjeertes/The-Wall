@@ -5,7 +5,7 @@
   $herhaaldWachtwoord = $_POST['wachtwoord3'];
   $email = $_POST['email'];
 
-  $verificatie = code();
+  $vertificatie = code();
 
   $con = mysqli_connect($servername,$uid,$pwd,$database);
   if (!$con) {
@@ -14,11 +14,11 @@
 
   mail($mail, $vertificatie);
 
-  makeAccount($gebruikersnaam,$wachtwoord,$con,$email);
+  makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie);
 
-  function makeAccount($gebruikersnaam,$wachtwoord,$con,$email){
+  function makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie){
     $wachtwoord2 = password_hash($wachtwoord, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO account (id, gebruikersnaam, wachtwoord, email, vertificatie, actives)
+    $sql = "INSERT INTO account (id, gebruikersnaam, wachtwoord, email, vertificatie, active)
     VALUES ('', '$gebruikersnaam', '$wachtwoord2', '$email', '$vertificatie', 'false')";
 
     if ($con->query($sql) === TRUE) {
@@ -36,147 +36,147 @@
 
       switch ($number) {
         case 1:
-        $code = $code + "A";
+        $code = $code . "A";
         break;
 
         case 2:
-        $code = $code + "B";
+        $code = $code . "B";
         break;
 
         case 3:
-        $code = $code + "C";
+        $code = $code . "C";
         break;
 
         case 4:
-        $code = $code + "D";
+        $code = $code . "D";
         break;
 
         case 5:
-        $code = $code + "E";
+        $code = $code . "E";
         break;
 
         case 6:
-        $code = $code + "F";
+        $code = $code . "F";
         break;
 
         case 7:
-        $code = $code + "G";
+        $code = $code . "G";
         break;
 
         case 8:
-        $code = $code + "H";
+        $code = $code . "H";
         break;
 
         case 9:
-        $code = $code + "I";
+        $code = $code . "I";
         break;
 
         case 10:
-        $code = $code + "J";
+        $code = $code . "J";
         break;
 
         case 11:
-        $code = $code + "K";
+        $code = $code . "K";
         break;
 
         case 12:
-        $code = $code + "L";
+        $code = $code . "L";
         break;
 
         case 13:
-        $code = $code + "M";
+        $code = $code . "M";
         break;
 
         case 14:
-        $code = $code + "N";
+        $code = $code . "N";
         break;
 
         case 15:
-        $code = $code + "O";
+        $code = $code . "O";
         break;
 
         case 16:
-        $code = $code + "P";
+        $code = $code . "P";
         break;
 
         case 17:
-        $code = $code + "Q";
+        $code = $code . "Q";
         break;
 
         case 18:
-        $code = $code + "R";
+        $code = $code . "R";
         break;
 
         case 19:
-        $code = $code + "S";
+        $code = $code . "S";
         break;
 
         case 20:
-        $code = $code + "T";
+        $code = $code . "T";
         break;
 
         case 21:
-        $code = $code + "U";
+        $code = $code . "U";
         break;
 
         case 22:
-        $code = $code + "V";
+        $code = $code . "V";
         break;
 
         case 23:
-        $code = $code + "W";
+        $code = $code . "W";
         break;
 
         case 24:
-        $code = $code + "X";
+        $code = $code . "X";
         break;
 
         case 25:
-        $code = $code + "Y";
+        $code = $code . "Y";
         break;
 
         case 26:
-        $code = $code + "Z";
+        $code = $code . "Z";
         break;
 
         case 27:
-        $code = $code + "1";
+        $code = $code . "1";
         break;
 
         case 28:
-        $code = $code + "2";
+        $code = $code . "2";
         break;
 
         case 29:
-        $code = $code + "3";
+        $code = $code . "3";
         break;
 
         case 30:
-        $code = $code + "4";
+        $code = $code . "4";
         break;
 
         case 31:
-        $code = $code + "5";
+        $code = $code . "5";
         break;
 
         case 32:
-        $code = $code + "6";
+        $code = $code . "6";
         break;
 
         case 33:
-        $code = $code + "7";
+        $code = $code . "7";
         break;
 
         case 34:
-        $code = $code + "8";
+        $code = $code . "8";
         break;
 
         case 35:
-        $code = $code + "9";
+        $code = $code . "9";
         break;
 
         case 36:
-        $code = $code + "0";
+        $code = $code . "0";
         break;
       }
     }

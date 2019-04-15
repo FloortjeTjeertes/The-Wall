@@ -9,9 +9,21 @@
   $con->query($db);
   $con->query($dt);
 
+  $sql = 'SELECT * FROM account';
+  $statement = $database->query($sql);
+
   session_start();
-  if($_SESSION === true){
-    echo "sessie werkt";
+
+  if($_SESSION == true){
+    foreach ($statement as $rij) {
+      if($_SESSION['id'] == $rij['id'] && $_SESSION['vertificatie'] == $rij['vertificatie']){
+        echo "sessie werkt";
+      } else {
+        echo "sessie werkt niet";
+      }
+    }
+  } else {
+    echo "session werkt niet";
   }
 ?>
 
@@ -29,7 +41,7 @@
     <div class="venster">
       <div class="modaalVenster">
         <div id="tekst1">
-          <form action="php/log_in.php" method="post">
+          <form action="index.php" method="post">
             <label for="gebruikersnaam">gebruikersnaam</label>
             <input type="text" name="gebruikersnaam" placeholder="gebruikersnaam"> <br>
             <label for="wachtwoord">wachtwoord</label>
@@ -70,3 +82,9 @@
 </body>
 
 </html>
+
+<?php
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include "php/log_in.php";
+  }
+?>
