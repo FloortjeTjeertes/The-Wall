@@ -8,10 +8,29 @@
       if (!$con) {
         die('Could not connect: ' . mysqli_error($con));
       }
-      $email = $_GET['email'];
-      $sql = "UPDATE account SET wachtwoord=$password1 WHERE email=$email";
-      $con->query($sql);
-      echo "Wachtwoord aangepast";
+
+      $sql = "SELECT * FROM account";
+      $statement = $con->query($sql);
+
+      $id = $_GET['id'];
+      $vertificatie = $_GET['vertificatie'];
+      $boolean = 0;
+
+      foreach ($statement as $rij) {
+        if($rij['id'] === $id){
+          if($rij['vertificatie'] === $vertificatie){
+            $boolean = 1;
+          }
+        }
+      }
+
+      if($boolean = 1){
+        $sql = "UPDATE account SET wachtwoord=$password1 WHERE id=$id";
+        $con->query($sql);
+        echo "Wachtwoord aangepast";
+      } else {
+        echo "do not change the url";
+      }
     } else {
       echo "Wachtwoorden zijn niet hetzelfde";
     }

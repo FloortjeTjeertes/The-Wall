@@ -8,6 +8,11 @@
 
   $con->query($db);
   $con->query($dt);
+
+  session_start();
+  if($_SESSION === true){
+    echo "sessie werkt";
+  }
 ?>
 
 <!DOCTYPE html>

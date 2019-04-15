@@ -16,17 +16,14 @@
   $sql = 'SELECT * FROM account';
   $statement = $database->query($sql);
 
-  $boolean = "false";
-  $nummer = 0;
-
   foreach ($statement as $rij) {
     if($gebruikersnaam === $rij['gebruikersnaam']){
       if(password_verify($wachtwoord , $rij['wachtwoord'])){
-        $boolean = "true";
-        $nummer = $rij["id"];
+        if($rij['active'] === "true"){
+
+        }
       }
     }
   }
-
-  header("Location: http://localhost/test/index.php?log_in=" . $boolean . "&nummer=" . $nummer);
+  header("Location: http://localhost/test/index.php");
 ?>
