@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$id = $_SESSION['id'];
+$vertificatie = "";
 
 $servername ="localhost";
 $uid="root";
@@ -17,6 +21,17 @@ try {
 
   $sql = 'SELECT * FROM fotos LIMIT 10';
   $statement = $database->query($sql);
+
+  $sql = "SELECT * FROM account WHERE id = $id";
+  $statement = $database->query($sql);
+
+  foreach ($statement as $rij) {
+    $vertificatie = $rij['vertificatie'];
+  }
+
+  if($_SESSION['vertificatie'] === $vertificatie){
+    header(//naar log in page);
+  }
 
   // $description = "blablabla";
   // $titel = "titel";

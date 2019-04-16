@@ -10,12 +10,21 @@ if(!$con){
   die('kan niet verbinden: '.mysqli_error($con));
 }
 
+session_start();
 
+$id = $_SESSION['id'];
+$vertificatie = "";
 
+$sql = "SELECT * FROM account WHERE id = $id";
+$statement = $con->query($sql);
 
+foreach ($statement as $rij) {
+  $vertificatie = $rij['vertificatie'];
+}
 
-
-
+if($_SESSION['vertificatie'] === $vertificatie){
+  header(//naar log in page);
+}
 
 //foto upload
 if(isset($_FILES['image'])){
