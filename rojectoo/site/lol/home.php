@@ -29,7 +29,11 @@ try {
     $vertificatie = $rij['vertificatie'];
   }
 
-  if($_SESSION['vertificatie'] === $vertificatie){
+  if($_SESSION == true){
+    if($_SESSION['vertificatie'] == $vertificatie){
+      header(//naar log in page);
+    }
+  } else {
     header(//naar log in page);
   }
 
