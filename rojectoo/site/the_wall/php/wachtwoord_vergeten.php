@@ -25,14 +25,16 @@
       }
 
       if($boolean = 1){
-        $sql = "UPDATE account SET wachtwoord=$password1 WHERE id=$id";
+        $password1 = password_hash($password1, PASSWORD_DEFAULT);
+        $sql = "UPDATE account SET wachtwoord='$password1' WHERE id='$id'";
         $con->query($sql);
         echo "Wachtwoord aangepast";
       } else {
         echo "do not change the url";
       }
     } else {
-      echo "Wachtwoorden zijn niet hetzelfde";
+      echo "Wachtwoorden zijn niet hetzelfde<br><br>";
+      echo $sql;
     }
   }
 ?>
