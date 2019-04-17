@@ -17,14 +17,10 @@
 
   if(empty($_SESSION['session'])){
 
-  }else{
-    if($_SESSION['session'] == "true"){
-      foreach ($statement as $rij) {
-        echo "hello"\;
-        if($_SESSION['vertificatie'] == $rij['vertificatie']){
-          $_SESSION['session'] = "true";
-          header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
-        }
+  } else {
+    foreach ($statement as $rij) {
+      if($_SESSION['vertificatie'] == $rij['vertificatie']){
+        header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
       }
     }
   }
