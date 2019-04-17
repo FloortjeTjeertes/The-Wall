@@ -1,5 +1,4 @@
 <?php
-  ini_set('display_errors', 1);
   include "php/database/database.php";
   include "php/database/data.php";
   $con = mysqli_connect($servername,$uid,$pwd,$database);

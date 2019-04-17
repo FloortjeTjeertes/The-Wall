@@ -1,4 +1,5 @@
 <?php
+  ini_set('display_errors', 1);
   include "database/data.php";
   $gebruikersnaam = $_POST['gebruikersnaam2'];
   $wachtwoord = $_POST['wachtwoord2'];
