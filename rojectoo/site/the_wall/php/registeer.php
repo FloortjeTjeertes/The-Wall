@@ -23,7 +23,7 @@
     $id = $rij['id'];
   }
 
-  mail($mail, $vertificatie, $id);
+  sendMail($mail, $vertificatie, $id);
 
   function makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie){
     $wachtwoord2 = password_hash($wachtwoord, PASSWORD_DEFAULT);
@@ -191,7 +191,7 @@
     return $code;
   }
 
-  function mail($mail, $vertificatie,$id){
+  function sendMail($mail, $vertificatie,$id){
 
     $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/registeer.php?vertificatie=" . $vertificatie;
     $msg = "Click the link to activate your account\n" . $link;
