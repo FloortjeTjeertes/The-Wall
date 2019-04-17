@@ -194,7 +194,7 @@
 
   function mail($mail, $vertificatie,$id){
 
-    $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/php/activate.php?vertificatie=" . $vertificatie . "&id=" . $id;
+    $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/registeer.php?vertificatie=" . $vertificatie;
     $msg = "Click the link to activate your account\n" . $link;
 
     $result = mail($mail, 'Activatie account', $msg);
