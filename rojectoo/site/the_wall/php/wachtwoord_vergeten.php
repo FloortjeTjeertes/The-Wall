@@ -27,7 +27,6 @@
       if($boolean = 1){
         $password1 = password_hash($password1, PASSWORD_DEFAULT);
         $sql = "UPDATE account SET wachtwoord='$password1' WHERE id='$id'";
-        echo $sql;
         $con->query($sql);
         echo "Wachtwoord aangepast<br><br";
       } else {
