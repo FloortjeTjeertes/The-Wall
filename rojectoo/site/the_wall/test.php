@@ -1,7 +1,7 @@
 <?php
   session_start();
   $_SESSION['session'] = "true";
-  $_SESSION['id'] = 1;
+  $_SESSION['id'] = 2;
   $_SESSION['vertificatie'] = "139KGP";
   $_SESSION['active'] = "true";
   echo $_SESSION['id'] . "<br>";
