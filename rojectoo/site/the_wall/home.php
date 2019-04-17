@@ -7,7 +7,7 @@ $vertificatie = "";
 $servername = "127.0.0.1";
 $uid = "c3652JRJman";
 $pwd = "Hallojoep1";
-$database = "c3652the_wall";
+$database = "c3652theWall";
 
 try {
     // We proberen (try) verbinding te maken
