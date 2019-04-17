@@ -44,7 +44,7 @@
     <div class="venster">
       <div class="modaalVenster">
         <div id="tekst1">
-          <form action="php/log_in.php" method="post">
+          <form action="log_in.php" method="post">
             <label for="gebruikersnaam">gebruikersnaam</label>
             <input type="text" name="gebruikersnaam" placeholder="gebruikersnaam"> <br>
             <label for="wachtwoord">wachtwoord</label>
