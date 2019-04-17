@@ -23,7 +23,7 @@
     } else {
       echo "<p style=color:black;>Email is verstuurd</p>";
 
-      $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/php/wachtwoord_vergeten?vertificatie=" . $vertificatie . "&id=" . $id;
+      $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/wachtwoord_vergeten?vertificatie=" . $vertificatie . "&id=" . $id;
 
       // the message
       $msg = "Klik deze link om je wachtwoord aan te passen\n" . $link;
