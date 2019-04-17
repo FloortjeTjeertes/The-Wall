@@ -10,17 +10,20 @@
 
   $con->query($dt);
 
-  $id = $_SESSION['id'];
-
-  $sql = "SELECT * FROM account WHERE id='$id'";
-  $statement = $con->query($sql);
-
-  if(empty($_SESSION['session'])){
+  if(empty($_SESSION['id'])){
 
   } else {
-    foreach ($statement as $rij) {
-      if($_SESSION['vertificatie'] == $rij['vertificatie']){
-        header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM account WHERE id='$id'";
+    $statement = $con->query($sql);
+
+    if(empty($_SESSION['session'])){
+
+    } else {
+      foreach ($statement as $rij) {
+        if($_SESSION['vertificatie'] == $rij['vertificatie']){
+          header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
+        }
       }
     }
   }
