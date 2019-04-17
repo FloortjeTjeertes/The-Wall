@@ -1,5 +1,4 @@
 <?php
-  ini_set('display_errors', 1);
   include "database/data.php";
   $gebruikersnaam = $_POST['gebruikersnaam2'];
   $wachtwoord = $_POST['wachtwoord2'];
@@ -16,14 +15,14 @@
 
   makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie);
 
-  $sql = 'SELECT * FROM account WHERE email='$email'';
+  $sql = "SELECT * FROM account WHERE email='$email'";
   $statement = $con->query($sql);
 
   foreach ($statement as $rij) {
     $id = $rij['id'];
   }
 
-  sendMail($mail, $vertificatie, $id);
+  sendMail($email, $vertificatie, $id);
 
   function makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie){
     $wachtwoord2 = password_hash($wachtwoord, PASSWORD_DEFAULT);
@@ -191,12 +190,12 @@
     return $code;
   }
 
-  function sendMail($mail, $vertificatie,$id){
+  function sendMail($email, $vertificatie,$id){
 
     $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/registeer.php?vertificatie=" . $vertificatie;
     $msg = "Click the link to activate your account\n" . $link;
 
-    $result = mail($mail, 'Activatie account', $msg);
+    $result = mail($email, 'Activatie account', $msg);
 
     if(!$result){
        echo 'Er ging iets fout bij het versturen van de verificatie e-mail';

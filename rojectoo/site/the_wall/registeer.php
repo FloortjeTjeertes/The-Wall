@@ -1,5 +1,4 @@
 <?php
-  ini_set('display_errors', 1);
   include "php/database/data.php";
 
   $con = mysqli_connect($servername,$uid,$pwd,$database);
@@ -12,8 +11,10 @@
 
   $sql = "UPDATE account SET active=$boolean WHERE vertificatie=$vertificatie";
 
+  echo $sql;
+
   $con->query($sql);
 
-  echo "Account is geactiveerd";
+  echo "<br><br>Account is geactiveerd";
 
 ?>
