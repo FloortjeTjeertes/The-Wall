@@ -15,6 +15,6 @@
 
   $con->query($sql);
 
-  echo "<br><br>Account is geactiveerd";
+  // echo "<br><br>Account is geactiveerd";
 
 ?>
