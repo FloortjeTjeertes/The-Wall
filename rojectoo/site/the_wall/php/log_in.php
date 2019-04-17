@@ -3,18 +3,13 @@
   $gebruikersnaam = $_POST['gebruikersnaam'];
   $wachtwoord = $_POST['wachtwoord'];
 
-  try {
-    // We proberen (try) verbinding te maken
-    $database = new PDO("mysql:host=$servername;dbname=$database", $uid, $pwd);
-    $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }catch (PDOException $e) {
-      // En we vangen (catch) fouten af zodat ons script niet crasht
-      echo "Fout bij verbinding maken: " . $e->getMessage();
-      exit;
+  $con = mysqli_connect($servername,$uid,$pwd,$database);
+  if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
   }
 
   $sql = 'SELECT * FROM account';
-  $statement = $database->query($sql);
+  $statement = $con->query($sql);
 
   foreach ($statement as $rij) {
     if($gebruikersnaam === $rij['gebruikersnaam']){
