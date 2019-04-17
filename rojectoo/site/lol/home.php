@@ -4,10 +4,10 @@ session_start();
 $id = $_SESSION['id'];
 $vertificatie = "";
 
-$servername ="localhost";
-$uid="root";
-$pwd="";
-$database="fotos";
+$servername = "127.0.0.1";
+$uid = "c3652JRJman";
+$pwd = "Hallojoep1";
+$database = "c3652the_wall";
 
 try {
     // We proberen (try) verbinding te maken

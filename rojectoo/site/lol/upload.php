@@ -1,9 +1,9 @@
 
 <?php
-$servername ="localhost";
-$uid="root";
-$pwd="";
-$database="fotos";
+$servername = "127.0.0.1";
+$uid = "c3652JRJman";
+$pwd = "Hallojoep1";
+$database = "c3652the_wall";
 $con = mysqli_connect($servername,$uid,$pwd,$database);
 
 if(!$con){
