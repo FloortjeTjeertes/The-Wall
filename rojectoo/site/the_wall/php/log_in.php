@@ -14,7 +14,7 @@
   foreach ($statement as $rij) {
     if($gebruikersnaam === $rij['gebruikersnaam']){
       if(password_verify($wachtwoord , $rij['wachtwoord'])){
-        if($rij['active'] === "true"){
+        if($rij['active'] == "true"){
           $_SESSION['session'] = "true";
           $_SESSION['id'] = $rij['id'];
           $_SESSION['vertificatie'] = $rij['vertificatie'];

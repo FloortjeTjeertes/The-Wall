@@ -22,6 +22,7 @@
     } else {
       foreach ($statement as $rij) {
         if($_SESSION['vertificatie'] == $rij['vertificatie']){
+          $_SESSION['active'] = "true";
           header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
         }
       }
