@@ -12,8 +12,8 @@
       $sql = "SELECT * FROM account";
       $statement = $con->query($sql);
 
-      $id = $_GET['id'];
-      $vertificatie = $_GET['vertificatie'];
+      $id = $_POST['id'];
+      $vertificatie = $_POST['vertificatie'];
       $boolean = 0;
 
       foreach ($statement as $rij) {
@@ -27,14 +27,14 @@
       if($boolean = 1){
         $password1 = password_hash($password1, PASSWORD_DEFAULT);
         $sql = "UPDATE account SET wachtwoord='$password1' WHERE id='$id'";
+        echo $sql;
         $con->query($sql);
-        echo "Wachtwoord aangepast";
+        echo "Wachtwoord aangepast<br><br";
       } else {
         echo "do not change the url";
       }
     } else {
-      echo "Wachtwoorden zijn niet hetzelfde<br><br>";
-      echo $sql;
+      echo "Wachtwoorden zijn niet hetzelfde>";
     }
   }
 ?>
