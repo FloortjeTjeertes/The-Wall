@@ -1,5 +1,14 @@
 <?php
+ini_set('display_errors', 1);
 session_start();
+
+if($_SESSION != true){
+  header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+} else if(empty($_SESSION['id'])) {
+  header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+} else if(empty($_SESSION['vertificatie'])) {
+  header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+}
 
 $id = $_SESSION['id'];
 $vertificatie = "";
