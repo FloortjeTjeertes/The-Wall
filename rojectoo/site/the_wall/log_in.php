@@ -10,7 +10,7 @@
   $con->query($dt);
 
   $sql = 'SELECT * FROM account';
-  $statement = $database->query($sql);
+  $statement = $con->query($sql);
 
   session_start();
 
