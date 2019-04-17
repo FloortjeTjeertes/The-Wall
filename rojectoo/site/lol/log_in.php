@@ -16,13 +16,9 @@
   if($_SESSION == true){
     foreach ($statement as $rij) {
       if($_SESSION['id'] == $rij['id'] && $_SESSION['vertificatie'] == $rij['vertificatie']){
-        echo "sessie werkt";
-      } else {
-        echo "sessie werkt niet";
+        header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
       }
     }
-  } else {
-    echo "session werkt niet";
   }
 ?>
 

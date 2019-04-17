@@ -6,15 +6,23 @@
   $email = $_POST['email'];
 
   $vertificatie = code();
+  $id = 1;
 
   $con = mysqli_connect($servername,$uid,$pwd,$database);
   if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
   }
 
-  mail($mail, $vertificatie);
-
   makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie);
+
+  $sql = 'SELECT * FROM account WHERE email='$email'';
+  $statement = $con->query($sql);
+
+  foreach ($statement as $rij) {
+    $id = $rij['id'];
+  }
+
+  mail($mail, $vertificatie, $id);
 
   function makeAccount($gebruikersnaam,$wachtwoord,$con,$email,$vertificatie){
     $wachtwoord2 = password_hash($wachtwoord, PASSWORD_DEFAULT);
@@ -22,11 +30,11 @@
     VALUES ('', '$gebruikersnaam', '$wachtwoord2', '$email', '$vertificatie', 'false')";
 
     if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "mail to activate your account has been send.";
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
-    header("Location: http://localhost/test/index.php");
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
   }
 
   function code(){
@@ -183,9 +191,9 @@
     return $code;
   }
 
-  function mail($mail, $vertificatie){
+  function mail($mail, $vertificatie,$id){
 
-    $link = "http://localhost/test/registeer.php?vertificatie=" . $vertificatie;
+    $link = "http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/php/activate.php?vertificatie=" . $vertificatie . "&id=" . $id;
     $msg = "Click the link to activate your account\n" . $link;
 
     $result = mail($mail, 'Activatie account', $msg);
@@ -194,7 +202,6 @@
        echo 'Er ging iets fout bij het versturen van de verificatie e-mail';
        exit;
     }else{
-       echo 'Klik de link in de verificatie email om je account te bevestigen';
        exit;
     }
   }

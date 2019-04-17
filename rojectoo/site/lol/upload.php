@@ -23,10 +23,10 @@ foreach ($statement as $rij) {
 }
 if($_SESSION == true){
   if($_SESSION['vertificatie'] == $vertificatie){
-    header(//naar log in page);
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
   }
 } else {
-  header(//naar log in page);
+  header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
 }
 
 //foto upload
