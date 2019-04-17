@@ -9,12 +9,10 @@
   $vertificatie = $_GET['vertificatie'];
   $boolean = "true";
 
-  $sql = "UPDATE account SET active=$boolean WHERE vertificatie=$vertificatie";
-
-  echo $sql;
+  $sql = "UPDATE account SET active='$boolean' WHERE vertificatie='$vertificatie'";
 
   $con->query($sql);
 
-  // echo "<br><br>Account is geactiveerd";
+  echo "<br><br>Account is geactiveerd";
 
 ?>
