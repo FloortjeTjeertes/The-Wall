@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 
 if(empty($_SESSION)){
   header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
@@ -22,8 +22,6 @@ $con = mysqli_connect($servername,$uid,$pwd,$database);
 if(!$con){
   die('kan niet verbinden: '.mysqli_error($con));
 }
-
-session_start();
 
 $id = $_SESSION['id'];
 $vertificatie = "";

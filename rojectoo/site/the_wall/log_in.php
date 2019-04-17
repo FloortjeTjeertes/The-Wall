@@ -1,4 +1,6 @@
 <?php
+  ini_set('display_errors', 1);
+  session_start();
   include "php/database/database.php";
   include "php/database/data.php";
   $con = mysqli_connect($servername,$uid,$pwd,$database);
@@ -8,18 +10,21 @@
 
   $con->query($dt);
 
-  $sql = 'SELECT * FROM account';
-  $statement = $con->query($sql);
+  $id = $_SESSION['id'];
 
-  session_start();
+  $sql = "SELECT * FROM account WHERE id='$id'";
+  $statement = $con->query($sql);
 
   if(empty($_SESSION['session'])){
 
   }else{
-    foreach ($statement as $rij) {
-      if($_SESSION['id'] == $rij['id'] && $_SESSION['vertificatie'] == $rij['vertificatie']){
-        $_SESSION['session'] = "true";
-        header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
+    if($_SESSION['session'] == "true"){
+      foreach ($statement as $rij) {
+        echo "hello"\;
+        if($_SESSION['vertificatie'] == $rij['vertificatie']){
+          $_SESSION['session'] = "true";
+          header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php");
+        }
       }
     }
   }

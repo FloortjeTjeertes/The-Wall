@@ -8,7 +8,7 @@
     die('Could not connect: ' . mysqli_error($con));
   }
 
-  $sql = 'SELECT * FROM account';
+  $sql = "SELECT * FROM account";
   $statement = $con->query($sql);
 
   foreach ($statement as $rij) {
