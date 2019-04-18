@@ -1,28 +1,15 @@
 /* ==================================================Header================================================== */
 
-.container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr ;
-     grid-template-rows:1fr 1fr 1fr 1fr 1fr;
-     width:100vw;
-     height: 100vh;
-
-}
-
-
 .wrapper{
   background-color: #8F8F8F;
   height: 150px;
   padding: 0;
   margin: 0;
 }
-
-body {
+body{
   margin: 0;
   padding: 0;
-  /* grid-template-columns: auto auto auto auto auto auto; */
 }
-
 header {
   height: 150px;
 }
@@ -42,6 +29,7 @@ header {
 }
 .Logo1 {
   width: 150px;
+  float: left;
 }
 
 
