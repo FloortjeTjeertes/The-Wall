@@ -32,10 +32,10 @@ try {
   $sql = 'SELECT * FROM fotos LIMIT 10';
   $statement = $database->query($sql);
 
-  $sql = "SELECT * FROM account WHERE id = $id";
-  $statement = $database->query($sql);
+  $sql2 = "SELECT * FROM account WHERE id = $id";
+  $statement2 = $database->query($sql2);
 
-  foreach ($statement as $rij) {
+  foreach ($statement2 as $rij) {
     $vertificatie = $rij['vertificatie'];
   }
 
