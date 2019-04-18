@@ -93,7 +93,7 @@
         <div id="fotos">
           <div id="midden">
             <?php fotos($statement2); ?>
-          <div>
+          </div>
         </div>
       </div>
   </body>
