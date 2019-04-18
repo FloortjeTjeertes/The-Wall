@@ -117,6 +117,9 @@ else{
             <li>
               <a class="button" href="upload.php" style="background-color: #B22222; color: #ffffff;">Upload</a>
             </li>
+            <li>
+              <a class="button" href="home.html">Home</a>
+            </li>
           </ul>
         </div>
         <h1 style="float: right; margin-top: 2em;">Social Stories</h1>
