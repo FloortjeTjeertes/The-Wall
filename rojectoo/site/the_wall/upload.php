@@ -114,6 +114,9 @@ else{
         <div id="topnav">
           <ul>
             <li>
+              <a class="button" href="log_out.php">Uitloggen</a>
+            </li>
+            <li>
               <a class="button" href="profiel.php">Profiel</a>
             </li>
             <li>

@@ -72,6 +72,9 @@
         <div id="topnav">
           <ul>
             <li>
+              <a class="button" href="log_out.php">Uitloggen</a>
+            </li>
+            <li>
               <a class="button" href="profiel.php" style="background-color: #B22222; color: #ffffff;">Profiel</a>
             </li>
             <li>
