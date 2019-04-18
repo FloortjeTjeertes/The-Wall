@@ -88,3 +88,9 @@ img#foto {
 .grid modaal {
   max-width: 100%;
 }
+
+.pijl {
+  width: 100px;
+  margin-top: 25px;
+  padding: 0px 40px;
+}
