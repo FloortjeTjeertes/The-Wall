@@ -16,7 +16,6 @@ if($_SESSION['session'] != "true") {
 if($boolean == false){
   echo "<li><a class=button href=log_in.php>Inloggen</a></li>";
 } else {
-
   include "php/database/data.php";
   $id = $_SESSION['id'];
 
@@ -25,11 +24,11 @@ if($boolean == false){
     die('Could not connect: ' . mysqli_error($con));
   }
 
-  $sql = "SELECT * FROM account WHERE id = $id";
-  $statement = $con->query($sql);
+  $sql2 = "SELECT * FROM account WHERE id = $id";
+  $statement2 = $con->query($sql2);
 
   $vertificatie = "";
-  foreach ($statement as $rij) {
+  foreach ($statement2 as $rij) {
     $vertificatie = $rij['vertificatie'];
   }
 

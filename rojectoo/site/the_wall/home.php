@@ -1,22 +1,17 @@
 <?php
 
-$servername = "127.0.0.1";
-$uid = "c3652JRJman";
-$pwd = "Hallojoep1";
-$database = "c3652theWall";
+  $servername = "127.0.0.1";
+  $uid = "c3652JRJman";
+  $pwd = "Hallojoep1";
+  $database = "c3652theWall";
 
-try {
-    // We proberen (try) verbinding te maken
-    $database = new PDO("mysql:host=$servername;dbname=$database", $uid, $pwd);
-    $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }catch (PDOException $e) {
-      // En we vangen (catch) fouten af zodat ons script niet crasht
-      echo "Fout bij verbinding maken: " . $e->getMessage();
-      exit;
+  $con = mysqli_connect($servername,$uid,$pwd,$database);
+  if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
   }
 
   $sql = 'SELECT * FROM fotos LIMIT 10';
-  $statement = $database->query($sql);
+  $statement = $con->query($sql);
  ?>
 
 <!DOCTYPE html>
