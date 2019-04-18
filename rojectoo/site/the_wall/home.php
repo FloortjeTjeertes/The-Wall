@@ -36,7 +36,7 @@
     </div>
 
     <script src="javascript/ajax.js"></script>
-    <script>ajaxFotos(0);</script>
+    <script>ajaxFotos(10);</script>
   </body>
 </html>
 

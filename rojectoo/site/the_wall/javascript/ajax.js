@@ -32,7 +32,6 @@ function ajaxEmail(email) {
 
 function ajaxFotos(nummer) {
   let images = document.getElementById('images');
-  nummer = nummer + 10;
   let controlScript = "php/fotos.php"; // PHP script met berekening
   let xmlhttp = new XMLHttpRequest();// maak een instance
   let httpString = controlScript + "?nummer=" + nummer;

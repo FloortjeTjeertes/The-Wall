@@ -20,13 +20,13 @@
   $nummerLater2 = $nummer - 10;
   $boolean = 1;
 
-  if($nummerLater2 < 0){
+  if($nummerLater2 <= 0){
     $boolean = 0;
   } else if($nummerLater1 > $num_rows){
     $boolean = 2;
   }
 
-  $sql = "SELECT * FROM fotos LIMIT $nummer";
+  $sql = "SELECT * FROM fotos LIMIT $nummerLater2 , $nummer";
   $statement = $con->query($sql);
 
   foreach ($statement as $rij) {
@@ -38,20 +38,13 @@
     <br> Description:<br>' . $rij['description'] . "<br>";
   }
   if($boolean == 0){
-    echo "<img id=rechts class=pijl src=img/pijltje_rechts.png>";
+    echo "<img id=rechts class=pijl src=img/pijltje_rechts.png onclick=ajaxFotos(" . $nummerLater1 . ")>";
   } else if ($boolean == 1){
-    echo "<img id=links class=pijl src=img/pijltje_links.png>";
-    echo "<img id=rechts class=pijl src=img/pijltje_rechts.png>";
+    echo "<img id=links class=pijl src=img/pijltje_links.png onclick=ajaxFotos(" . $nummerLater2 . ")>";
+    echo "<img id=rechts class=pijl src=img/pijltje_rechts.png onclick=ajaxFotos(" . $nummerLater1 . ")>";
   } else {
-    echo "<img id=links class=pijl src=img/pijltje_links.png>";
+    echo "<img id=links class=pijl src=img/pijltje_links.png onclick=ajaxFotos(" . $nummerLater2 . ")>";
   }
   echo "</div>";
-
-  echo "<script>";
-  echo "let rechts = document.getElementById('rechts');";
-  echo "let links = document.getElementById('links');";
-  echo "rechts.addEventListener('click', ajaxFotos(" . $nummerLater1 . "))";
-  echo "links.addEventListener('click', ajaxFotos(" . $nummerLater2 . "))";
-  echo "</script>";
 
 ?>
