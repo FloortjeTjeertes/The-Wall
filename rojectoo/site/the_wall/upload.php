@@ -62,20 +62,20 @@ $Datum=date("Y-m-d");
   $bestandstypen = array("jpeg","jpg","png");
 
   if(in_array($file_ext,$bestandstypen)=== false){
-  $errors[] = "<script>alert('Dit bestandstype kan niet, kies een JPEG of een PNG bestand.');</script>";
+  $errors[] = "<script>console.log('Dit bestandstype kan niet, kies een JPEG of een PNG bestand.');</script>";
   }
 
   if($file_size > 2097152){
     $errors[] ='Het bestand moet kleiner zijn dan 2 MB';
-        echo "<script>alert(Het bestand moet kleiner zijn dan 2 MB');</script>";
+        echo "<script>console.log(Het bestand moet kleiner zijn dan 2 MB');</script>";
   }
   if(empty($errors)==true){
      // move_upload_file stuurt je bestand naar een andere lokatie
 
      move_uploaded_file($file_tmp,"uploads/".$file_name);
-     echo "<script>alert('Gelukt');</script>";
+     echo "<script>console.log('Gelukt');</script>";
   } else{
-    echo "<script>alert('het bestand is te groot');</script>";
+    echo "<script>console.log('het bestand is te groot');</script>";
      // print_r($errors);
   }
 //function word aangeroepen
@@ -87,10 +87,10 @@ function bestanden_upload($con,$file_name,$Datum,$title, $description,$auther){
   values('$Datum', '$auther','uploads/$file_name','$description','$title')";
 $file_name="";
 if ($con->query($sql)=== TRUE){
-  echo "<script>alert(' verbinding');</script>";
+  echo "<script>console.log(' verbinding');</script>";
 }
 else{
-  echo "<script>alert('Error".$sql."<br>".$con->error.";</script>";
+  echo "<script>console.log('Error".$sql."<br>".$con->error.";</script>";
 }
 }
 
@@ -149,9 +149,7 @@ else{
     <div id="deRest">
 <input id="titel" type="text" name="titel" placeholder="name" value="">
 <br>
-<div id="pic"></div>
-
-<input id="description" type="text" name="description" placeholder="description" value="">
+<textarea name="description" rows="3" cols="35" placeholder="description"></textarea>
       <input type="submit" name="upload"/>
       </form>
 

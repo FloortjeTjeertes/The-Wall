@@ -1,5 +1,15 @@
 <?php
   session_start();
+
+  if($_SESSION['session'] != "true") {
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+  } else if(empty($_SESSION['id'])) {
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+  } else if(empty($_SESSION['vertificatie'])) {
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+  } else if(empty($_SESSION['active'])) {
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
+  };
   include "php/database/data.php";
   $id = $_SESSION['id'];
 
@@ -12,6 +22,7 @@
 
   $auther = "";
   $email = "";
+  $vertificatie = "";
 
   foreach ($statement as $rij) {
     $auther = $rij['gebruikersnaam'];
@@ -19,22 +30,26 @@
     $vertificatie = $rij['vertificatie'];
   }
 
-  if($_SESSION == true){
-    if($vertificatie != $_SESSION['vertificatie']){
+  if($_SESSION['session'] == "true"){
+    if($_SESSION['vertificatie'] != $vertificatie){
+      header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
     }
   } else {
+    header("Location: http://26393.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/log_in.php");
   }
 
-  $sql2 = "SELECT * FROM fotos WHERE auther = '$auther'";
+  $sql2 = "SELECT * FROM fotos WHERE user = '$auther'";
   $statement2 = $con->query($sql2);
 
   function fotos($statement2){
     foreach ($statement2 as $rij) {
+      echo "<div class=foto>";
       echo "<h4>". $rij['titel'] ."</h4>";
       echo "<img src=" . $rij['filepath'] . ">";
-      echo "<p> auther: " . $rij['auther'] . "</p>";
+      echo "<p> auther: " . $rij['user'] . "</p>";
       echo "<p> description:<br>" . $rij['description'] . "</p>";
       echo "<p> datum: " . $rij['datum'] . "</p>";
+      echo "</div>";
     }
   }
 ?>
@@ -70,13 +85,15 @@
         <h1 style="float: right; margin-top: 2em;">Social Stories</h1>
       </div>
 
-      <div>
-        <h1><?php echo $auther;?></h1>
-        <h2>Persoonlijke gegevens</h2>
-        <p>Email: <?php echo $email; ?></p>
-        <h2>geuploadde fotos</h2>
-        <div>
-          <?php fotos($statement2); ?>
+      <div id="container">
+        <h1 id="titel"><?php echo $auther;?></h1>
+        <h2 id="kopje1">Persoonlijke gegevens</h2>
+        <p id="email">Email: <?php echo $email; ?></p>
+        <h2 id="kopje2">geuploadde fotos</h2>
+        <div id="fotos">
+          <div id="midden">
+            <?php fotos($statement2); ?>
+          <div>
         </div>
       </div>
   </body>
