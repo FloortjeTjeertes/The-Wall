@@ -118,7 +118,7 @@ else{
               <a class="button" href="upload.php" style="background-color: #B22222; color: #ffffff;">Upload</a>
             </li>
             <li>
-              <a class="button" href="home.html">Home</a>
+              <a class="button" href="home.php">Home</a>
             </li>
           </ul>
         </div>

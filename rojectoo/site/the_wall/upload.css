@@ -51,18 +51,6 @@ header {
 #topnav ul{margin:0; padding:0; list-style:none;}
 #topnav ul, #topnav li{float:right; list-style:none; margin:0; padding:0;}
 #topnav li a:link, #topnav li a:visited, #topnav li a:hover{display:block; margin:0 10px 0 0; padding:5px 5px; color:#3f3b32;}
-#topnav ul ul li a:link, #topnav ul ul li a:visited{border:none;}
-#topnav ul li.last a{margin-right:0;}
-#topnav li a:hover, #topnav ul li.active a{color:#3f3b32;}
-#topnav li li a:link, #topnav li li a:visited{width:150px; float:none; margin:0; padding:7px 10px; font-size:12px; font-weight:normal; color:#FFFFFF; background-color:#3f3b32; border-left:1px solid #FFFFFF;}
-#topnav li li a:hover{color:#3f3b32; background-color:#ffffff;}
-#topnav li ul{z-index:9999; position:absolute; left:-999em; height:auto; width:170px;}
-#topnav li ul a{width:140px;}
-#topnav li ul ul{margin:-32px 0 0 0;}
-#topnav li:hover ul ul{left:-999em;}
-#topnav li:hover ul, #topnav li li:hover ul{left:auto;}
-#topnav li:hover{position:static;}
-#topnav li.last a{margin-right:0;}
 
 /* =======================================================midle========================================================== */
 .midle {
