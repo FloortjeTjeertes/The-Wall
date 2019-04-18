@@ -30,7 +30,7 @@
     VALUES ('', '$gebruikersnaam', '$wachtwoord2', '$email', '$vertificatie', 'false')";
 
     if ($con->query($sql) === TRUE) {
-        echo "mail to activate your account has been send.";
+        echo "mail to activate your account has been send.<br>In approcemitly 10 minutes will the mail arrive.";
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
