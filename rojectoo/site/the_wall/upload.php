@@ -74,12 +74,12 @@ $Datum=date("Y-m-d");
 
      move_uploaded_file($file_tmp,"uploads/".$file_name);
      echo "<script>console.log('Gelukt');</script>";
+     //function word aangeroepen
+      bestanden_upload($con,$file_name,$Datum,$titel,$description,$auther);
   } else{
     echo "<script>console.log('het bestand is te groot');</script>";
      // print_r($errors);
   }
-//function word aangeroepen
-  bestanden_upload($con,$file_name,$Datum,$titel,$description,$auther);
 }
 //upload info
 function bestanden_upload($con,$file_name,$Datum,$title, $description,$auther){
