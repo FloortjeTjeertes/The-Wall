@@ -23,12 +23,14 @@ if(!$con){
 
 $id = $_SESSION['id'];
 $vertificatie = "";
+$auther = "";
 
 $sql = "SELECT * FROM account WHERE id = $id";
 $statement = $con->query($sql);
 
 foreach ($statement as $rij) {
   $vertificatie = $rij['vertificatie'];
+  $auther = $rij['gebruikersnaam'];
 }
 if($_SESSION['session'] == "true"){
   if($_SESSION['vertificatie'] != $vertificatie){
@@ -77,12 +79,12 @@ $Datum=date("Y-m-d");
      // print_r($errors);
   }
 //function word aangeroepen
-  bestanden_upload($con,$file_name,$Datum,$titel,$description);
+  bestanden_upload($con,$file_name,$Datum,$titel,$description,$auther);
 }
 //upload info
-function bestanden_upload($con,$file_name,$Datum,$description,$title){
+function bestanden_upload($con,$file_name,$Datum,$title, $description,$auther){
   $sql="INSERT INTO fotos(Datum,user,filepath,description,titel)
-  values('$Datum', '','uploads/$file_name','$description','$title')";
+  values('$Datum', '$auther','uploads/$file_name','$description','$title')";
 $file_name="";
 if ($con->query($sql)=== TRUE){
   echo "<script>alert(' verbinding');</script>";
@@ -112,7 +114,7 @@ else{
         <div id="topnav">
           <ul>
             <li>
-              <a class="button" href="profiel.html">Profiel</a>
+              <a class="button" href="profiel.php">Profiel</a>
             </li>
             <li>
               <a class="button" href="upload.php" style="background-color: #B22222; color: #ffffff;">Upload</a>
@@ -126,11 +128,10 @@ else{
       </div>
 </div>
 <div class="container">
-    <h3>foto uploaden</h3>
 
       <div id="midle" class="midle">
     <div id="uploadbox">
-    beste <div id=naam>uw naam</div> upload hier je foto
+    beste <?php echo $auther; ?><br> upload hier je foto
     <form action="" method="POST" enctype="multipart/form-data">
     <input  required type="file" name="image">
 <select required id="catogorie" name="catogorie">

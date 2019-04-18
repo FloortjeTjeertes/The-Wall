@@ -51,6 +51,8 @@ try {
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="icon" href="logo/logo.png" type="image/gif" sizes="16x16">
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="css.css">
 
@@ -68,7 +70,7 @@ try {
         <div id="topnav">
           <ul>
             <li>
-              <a class="button" href="profiel.html">Profiel</a>
+              <a class="button" href="profiel.php">Profiel</a>
             </li>
             <li>
               <a class="button" href="upload.php">Upload</a>

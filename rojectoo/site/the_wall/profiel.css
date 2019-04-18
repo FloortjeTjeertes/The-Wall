@@ -1,4 +1,3 @@
-
 /* ==================================================Header================================================== */
 .wrapper{
   background-color: #8F8F8F;
@@ -9,15 +8,6 @@
 body{
   margin: 0;
   padding: 0;
-  /* scrolling baground test */
-    background: url("https://wallpapersmug.com/download/3840x2400/5e08a0/graffiti-art-bright-street-wall.jpg") no-repeat top center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  /* einde test */
-
 }
 header {
   height: 150px;
@@ -41,50 +31,8 @@ header {
   float: left;
 }
 
-
-/* ==================================================Title================================================== */
-
 /* ==================================================Navigatie bar================================================== */
 #topnav{display:block; float:right; width:650px; margin:17px 0 0 0; padding:0; font-size:13px; font-weight:bold; font-family:Verdana, Arial, Helvetica, sans-serif;}
 #topnav ul{margin:0; padding:0; list-style:none;}
 #topnav ul, #topnav li{float:right; list-style:none; margin:0; padding:0;}
 #topnav li a:link, #topnav li a:visited, #topnav li a:hover{display:block; margin:0 10px 0 0; padding:5px 5px; color:#3f3b32;}
-
-/* ==================================================Grid================================================== */
-#container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* height: 4000px; */
-}
-#imglist{
-  background-color: #d3d3d3;
-  grid-area:1/2;
-  width: 750px;
-  height: 4055px;
-}
-
-#images{
-  width: 400px;
-  height: 400px;
-  float: left;
-  padding-left: 11.5em;
-}
-img#foto {
-  height: 300px;
-  width: 300px;
-}
-#fotolijst {
-  background-color: grey;
-  width: 400px;
-  height: 400px;
-  text-align: center;
-  margin-top: 5px;
-}
-.modaal {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 80vw;
-}
-.grid modaal {
-  max-width: 100%;
-}

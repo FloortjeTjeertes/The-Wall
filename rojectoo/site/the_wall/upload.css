@@ -9,6 +9,14 @@
 body{
   margin: 0;
   padding: 0;
+  /* scrolling baground test */
+    background: url("https://wallpapersmug.com/download/3840x2400/5e08a0/graffiti-art-bright-street-wall.jpg") no-repeat top center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  /* einde test */
 }
 header {
   height: 150px;
