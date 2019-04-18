@@ -71,7 +71,10 @@ try {
               <a class="button" href="profiel.html">Profiel</a>
             </li>
             <li>
-              <a class="button" href="upload.php" style="background-color: #B22222; color: #ffffff;">Upload</a>
+              <a class="button" href="upload.php">Upload</a>
+            </li>
+            <li>
+              <a class="button" href="home.php" style="background-color: #B22222; color: #ffffff;">Home</a>
             </li>
           </ul>
         </div>
