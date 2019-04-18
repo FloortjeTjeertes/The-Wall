@@ -69,3 +69,9 @@ header {
   position: relative;
   left: 600px;
 }
+
+#delete {
+  color: red;
+  float: right;
+  text-decoration: none;
+}

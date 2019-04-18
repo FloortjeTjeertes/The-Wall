@@ -44,6 +44,7 @@
   function fotos($statement2){
     foreach ($statement2 as $rij) {
       echo "<div class=foto>";
+      echo "<p><a id=delete href=php/delete.php?filepath=" . $rij["filepath"] . ">Delete image</a></p>";
       echo "<h4>". $rij['titel'] ."</h4>";
       echo "<img id=image src=" . $rij['filepath'] . ">";
       echo "<p> auther: " . $rij['user'] . "</p>";
