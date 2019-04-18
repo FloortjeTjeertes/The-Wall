@@ -17,7 +17,6 @@ try {
 
   $sql = 'SELECT * FROM fotos LIMIT 10';
   $statement = $database->query($sql);
-
  ?>
 
 <!DOCTYPE html>
@@ -41,9 +40,7 @@ try {
 
         <div id="topnav">
           <ul>
-            <li>
-              <a class="button" href="log_out.php">Uitloggen</a>
-            </li>
+            <?php include "php/inOrOut.php"; ?>
             <li>
               <a class="button" href="profiel.php">Profiel</a>
             </li>
