@@ -45,7 +45,7 @@
     foreach ($statement2 as $rij) {
       echo "<div class=foto>";
       echo "<h4>". $rij['titel'] ."</h4>";
-      echo "<img src=" . $rij['filepath'] . ">";
+      echo "<img id=image src=" . $rij['filepath'] . ">";
       echo "<p> auther: " . $rij['user'] . "</p>";
       echo "<p> description:<br>" . $rij['description'] . "</p>";
       echo "<p> datum: " . $rij['datum'] . "</p>";
@@ -84,13 +84,16 @@
         </div>
         <h1 style="float: right; margin-top: 2em;">Social Stories</h1>
       </div>
+    </div>
 
       <div id="container">
-        <h1 id="titel"><?php echo $auther;?></h1>
-        <h2 id="kopje1">Persoonlijke gegevens</h2>
-        <p id="email">Email: <?php echo $email; ?></p>
-        <h2 id="kopje2">geuploadde fotos</h2>
-        <div id="fotos">
+        <div id="teksten">
+          <h1 id="titel"><?php echo $auther;?></h1>
+          <h2 id="kopje1">Persoonlijke gegevens</h2>
+          <p id="email">Email: <?php echo $email; ?></p>
+          <h2 id="kopje2">geuploadde fotos</h2>
+        </div>
+        <div id="fotolijst">
           <div id="midden">
             <?php fotos($statement2); ?>
           </div>
