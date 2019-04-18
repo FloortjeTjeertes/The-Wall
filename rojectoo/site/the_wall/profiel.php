@@ -57,10 +57,10 @@
         <div id="topnav">
           <ul>
             <li>
-              <a class="button" href="profiel.php">Profiel</a>
+              <a class="button" href="profiel.php" style="background-color: #B22222; color: #ffffff;">Profiel</a>
             </li>
             <li>
-              <a class="button" href="upload.php" style="background-color: #B22222; color: #ffffff;">Upload</a>
+              <a class="button" href="upload.php">Upload</a>
             </li>
             <li>
               <a class="button" href="home.php">Home</a>

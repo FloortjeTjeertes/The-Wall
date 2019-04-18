@@ -91,10 +91,11 @@ try {
           <?php
             foreach ($statement as $rij) {
               echo '<div id="fotolijst">
-              '. $rij['titel'] . '
+              Titel: '. $rij['titel'] . '
               <br>
               <img id="foto" src= ' . $rij['filepath'] . '></img>
-              <br>' . $rij['description'] .
+              <br> Auther: ' . $rij['user'] . '
+              <br> Description:<br>' . $rij['description'] .
 
 
               '</div>';

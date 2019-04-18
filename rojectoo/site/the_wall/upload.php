@@ -127,7 +127,7 @@ else{
         <h1 style="float: right; margin-top: 2em;">Social Stories</h1>
       </div>
 </div>
-<div class="container">
+<div id="container">
 
       <div id="midle" class="midle">
     <div id="uploadbox">
@@ -152,11 +152,9 @@ else{
 <div id="pic"></div>
 
 <input id="description" type="text" name="description" placeholder="description" value="">
-      <input type="submit"/>
+      <input type="submit" name="upload"/>
       </form>
-      <div>
 
-        </div>
 
       </div>
       <!-- //einde upload -->
