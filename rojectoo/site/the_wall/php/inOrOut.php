@@ -34,9 +34,11 @@ if($boolean == false){
 
   if($_SESSION['session'] == "true"){
     if($_SESSION['vertificatie'] != $vertificatie){
-      echo "<li><a class=button href=log_out.php>Uitloggen</a></li>";
-    } else {
       echo "<li><a class=button href=log_in.php>Inloggen</a></li>";
+    } else {
+      echo "<li><a class=button href=log_out.php>Uitloggen</a></li>";
+      echo "<li><a class=button href=profiel.php>Profiel</a></li>";
+      echo "<li><a class=button href=upload.php>Upload</a></li>";
     }
   } else {
     echo "<li><a class=button href=log_in.php>Inloggen</a></li>";

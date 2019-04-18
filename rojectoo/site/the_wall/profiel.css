@@ -8,6 +8,12 @@
 body{
   margin: 0;
   padding: 0;
+  background: url("https://wallpapersmug.com/download/3840x2400/5e08a0/graffiti-art-bright-street-wall.jpg") no-repeat top center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 header {
   height: 150px;
@@ -44,11 +50,11 @@ header {
 
 #midden {
   grid-column: 2/2;
-  background-color: red;
 }
 
 .foto {
   text-align: center;
+  background-color: #8F8F8F;
 }
 
 #image {
@@ -58,4 +64,8 @@ header {
 
 #teksten {
   text-align: center;
+  background-color: #d3d3d3;
+  width: 300px;
+  position: relative;
+  left: 600px;
 }

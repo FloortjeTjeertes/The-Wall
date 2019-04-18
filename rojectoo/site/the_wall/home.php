@@ -37,12 +37,6 @@
           <ul>
             <?php include "php/inOrOut.php"; ?>
             <li>
-              <a class="button" href="profiel.php">Profiel</a>
-            </li>
-            <li>
-              <a class="button" href="upload.php">Upload</a>
-            </li>
-            <li>
               <a class="button" href="home.php" style="background-color: #B22222; color: #ffffff;">Home</a>
             </li>
           </ul>

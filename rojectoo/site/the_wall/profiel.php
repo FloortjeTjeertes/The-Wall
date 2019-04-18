@@ -48,7 +48,6 @@
       echo "<img id=image src=" . $rij['filepath'] . ">";
       echo "<p> auther: " . $rij['user'] . "</p>";
       echo "<p> description:<br>" . $rij['description'] . "</p>";
-      echo "<p> datum: " . $rij['datum'] . "</p>";
       echo "</div>";
     }
   }
