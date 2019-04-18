@@ -1,19 +1,3 @@
-<?php
-
-  $servername = "127.0.0.1";
-  $uid = "c3652JRJman";
-  $pwd = "Hallojoep1";
-  $database = "c3652theWall";
-
-  $con = mysqli_connect($servername,$uid,$pwd,$database);
-  if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-  }
-
-  $sql = 'SELECT * FROM fotos LIMIT 10';
-  $statement = $con->query($sql);
- ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -44,30 +28,15 @@
         <h1 style="float: right; margin-top: 2em;">Social Stories</h1>
       </div>
 
-
     </div>
     <div id="container">
       <div id="imglist">
-        <div id="images">
-          <?php
-            foreach ($statement as $rij) {
-              echo '<div id="fotolijst">
-              Titel: '. $rij['titel'] . '
-              <br>
-              <img id="foto" src= ' . $rij['filepath'] . '></img>
-              <br> Auther: ' . $rij['user'] . '
-              <br> Description:<br>' . $rij['description'] .
-
-
-              '</div>';
-            }
-          ?>
-        </div>
+        <div id="images"></div>
       </div>
     </div>
 
-
-
+    <script src="javascript/ajax.js"></script>
+    <script>ajaxFotos(0);</script>
   </body>
 </html>
 
